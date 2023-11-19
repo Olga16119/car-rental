@@ -1,0 +1,58 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  color: var(--main-txt-cl);
+  background-color: var(--body-bg-cl);
+  line-height: 1.5;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  display: block;
+  color: currentColor;
+  text-decoration: none;
+}
+
+a.active {
+  color: var(--accent-cl);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}

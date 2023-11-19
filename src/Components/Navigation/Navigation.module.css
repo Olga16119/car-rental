@@ -1,0 +1,24 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-left: auto;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.nav-link {
+  transition: color var(--transition);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--accent-colour-active);
+}
