@@ -1,135 +1,124 @@
-// import { useEffect, useState } from 'react';
-// import toast from 'react-hot-toast';
+import { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 
-// import { useGetAllAdvertsQuery } from 'redux/api/advertsAPI';
-// import { filterCars, paginateCars, scrollSmooth } from 'utils';
+import { useGetAllQuery } from 'redux/api/advertsApi';
+import { filterCars, pagination, scroll } from '../../utils';
 import CarsList from 'Components/CarsList/CarsList';
-// import CatalogFilters from 'components/CatalogFilters';
-// import MainBtn from 'components/MainBtn';
-// import NoContentComponent from 'components/NoContentComponent';
+import Filters from 'Components/Filters/Filters';
+import Button from 'Components/Button/Button';
+import NotFound from 'Components/NotFound/NotFound';
 import Loader from 'Components/Loader/Loader';
-
-// import css from 'css/utils.module.css';
-
+import css from './Catalog.module.css';
 
 const Catalog = () => {
-//     const [currentPage, setCurrentPage] = useState(1);
-//   const [limit, setLimit] = useState(9);
-//   const [totalPages, setTotalPages] = useState(0);
-//   const [cars, setCars] = useState([]);
-//   const [searchFilters, setSearchFilters] = useState({});
-//   const [isSearch, setIsSearh] = useState(false);
-//   const [filteredCarsArr, setFilteredCarsArr] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [limit, setLimit] = useState(9);
+  const [totalPages, setTotalPages] = useState(0);
+  const [cars, setCars] = useState([]);
+  const [searchFilters, setSearchFilters] = useState({});
+  const [isSearch, setIsSearh] = useState(false);
+  const [filteredCarsArray, setFilteredCarsArray] = useState([]);
 
-//   const { data: allAdverts, isLoading, isFetching } = useGetAllAdvertsQuery();
+  const { data: allAdverts, isLoading, isFetching } = useGetAllQuery();
 
-//   useEffect(() => {
-//     if (!allAdverts) {
-//       return;
-//     }
+  useEffect(() => {
+    if (!allAdverts) {
+      return;
+    }
 
-    // setLimit(12);
+    setLimit(12);
+    setCars(allAdverts);
 
-//     if (!isSearch) {
-//       const paginatedCars = paginateCars({
-//         arr: allAdverts,
-//         limit,
-//         currentPage,
-//       });
-//       setCars(paginatedCars);
-//       setTotalPages(Math.ceil(allAdverts.length / limit));
-//     } else {
-//       const paginatedFilteredCars = paginateCars({
-//         arr: filteredCarsArr,
-//         limit,
-//         currentPage,
-//       });
-//       setCars(paginatedFilteredCars);
-//       setTotalPages(Math.ceil(filteredCarsArr.length / limit));
-//     }
-//   }, [allAdverts, currentPage, limit, isSearch, filteredCarsArr]);
+    if (!isSearch) {
+      const paginatedCars = pagination({
+        array: allAdverts,
+        limit,
+        currentPage,
+      });
+      setCars(paginatedCars);
+      setTotalPages(Math.ceil(allAdverts.length / limit));
+    } else {
+      const filteredCars = pagination({
+        arr: filteredCarsArray,
+        limit,
+        currentPage,
+      });
+      setCars(filteredCars);
+      setTotalPages(Math.ceil(filteredCarsArray.length / limit));
+    }
+  }, [allAdverts, currentPage, limit, isSearch, filteredCarsArray]);
 
-//   useEffect(() => {
-//     scrollSmooth({ arr: cars, limit });
-//   }, [cars, limit]);
+  useEffect(() => {
+    scroll({ array: cars, limit });
+  }, [cars, limit]);
 
-//   const handleLoadMore = () => {
-//     setCurrentPage(prevPage => prevPage + 1);
-//   };
+  const handleLoadMore = () => {
+    setCurrentPage(prevPage => prevPage + 1);
+  };
 
-//   const handleSearch = ({ make, rentalPrice, from, to }) => {
-//     const isSameSearch =
-//       make === searchFilters.make &&
-//       rentalPrice === searchFilters.rentalPrice &&
-//       from === searchFilters.from &&
-//       to === searchFilters.to;
+  const handleSearch = ({ make, rentalPrice, from, to }) => {
+    const isSameSearch =
+      make === searchFilters.make &&
+      rentalPrice === searchFilters.rentalPrice &&
+      from === searchFilters.from &&
+      to === searchFilters.to;
 
-//     if (isSameSearch) {
-//       return;
-//     }
+    if (isSameSearch) {
+      return;
+    }
 
-//     setSearchFilters({ make, rentalPrice, from, to });
-//     setIsSearh(true);
-//     const filteredCars = filterCars({
-//       carsArr: allAdverts,
-//       make,
-//       rentalPrice,
-//       from,
-//       to,
-//     });
+    setSearchFilters({ make, rentalPrice, from, to });
+    setIsSearh(true);
+    const filteredCars = filterCars({
+      carsArray: allAdverts,
+      make,
+      rentalPrice,
+      from,
+      to,
+    });
 
-//     if (filteredCars.length > 0) {
-//       toast(`${filteredCars.length} cars found`, { icon: '🔍' });
-//     } else {
-//       toast.error('There is no match');
-//     }
+    if (filteredCars.length > 0) {
+      toast(`Found ${filteredCars.length} cars `);
+    } else {
+      toast.error('Nothing was found for your request');
+    }
 
-//     setFilteredCarsArr(filteredCars);
-//   };
+    setFilteredCarsArray(filteredCars);
+  };
 
   return (
     <>
-      {/* <CatalogFilters
+      <Filters
         props={{
           setCurrentPage,
           handleSearch,
           currentPage,
           limit,
         }}
-      /> */}
+      />
 
-      {/* {isLoading || isFetching ? ( */}
+      {isLoading || isFetching ? (
         <Loader
-          size={15}
-          margin={10}
           position={{
-            marginTop: '100px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
             textAlign: 'center',
           }}
         />
-      {/* // ) : cars.length !== 0 ? ( */}
-          <CarsList
-            //   carsData={cars}
-          />
-      {/* ) : (
-        <NoContentComponent
-          noContMess={"Sorry, we couldn't find any vehicles"}
-        />
-      )} */}
-{/* 
+      ) : cars.length !== 0 ? (
+        <CarsList cars={cars} />
+      ) : (
+        <NotFound message={'Sorry, nothing was found'} />
+      )}
+
       {currentPage < totalPages && (
-        <MainBtn
+        <Button
           className={css['load-btn']}
-          onMainBtnClick={handleLoadMore}
-          btnTitle="Load More"
+          onButtonClick={handleLoadMore}
+          title="Load More"
           styles={css['load-btn']}
         />
-      )} */}
+      )}
     </>
   );
 };
 
-
-export default Catalog
+export default Catalog;

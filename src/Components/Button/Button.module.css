@@ -1,0 +1,18 @@
+.btn {
+  padding: 12px 99px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.43;
+  color: #fff;
+
+  border: none;
+  border-radius: 12px;
+  background-color: var(--accent-colour);
+  transition: background-color var(--transition);
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--accent-colour-active);
+}

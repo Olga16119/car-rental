@@ -1,0 +1,20 @@
+.footer {
+  margin-top: auto;
+  padding: 15px 0;
+}
+
+.footer-text {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 1.2px;
+}
+
+.footer-link {
+    font-size: 20px;
+  text-decoration: underline;
+}

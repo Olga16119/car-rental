@@ -1,40 +1,40 @@
 import { configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
-//   persistReducer,
-//   FLUSH,
-//   REHYDRATE,
-//   PAUSE,
-//   PERSIST,
-//   PURGE,
-//   REGISTER,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
 } from 'redux-persist';
-// import storage from 'redux-persist/lib/storage';
+import storage from 'redux-persist/lib/storage';
 
-// import favoriteReducer from './favorite/favoriteSlice';
-// import advertsAPI from './api/advertsAPI';
-// import makesFilterAPI from './api/makesFilterAPI';
+import favoriteReducer from '../redux/api/favoriteSlice';
+import advertsApi from './api/advertsApi';
+import filterApi from './api/filterApi';
 
-// const favPersistConfig = {
-//   key: 'favorites',
-//   storage,
-//   whitelist: ['favorites'],
-// };
+const favoritePersistConfig = {
+  key: 'favorites',
+  storage,
+  whitelist: ['favorites'],
+};
 
 export const store = configureStore({
   reducer: {
-    // favorites: persistReducer(favPersistConfig, favoriteReducer),
-    // [advertsAPI.reducerPath]: advertsAPI.reducer,
-    // [makesFilterAPI.reducerPath]: makesFilterAPI.reducer,
+    favorites: persistReducer(favoritePersistConfig, favoriteReducer),
+    [advertsApi.reducerPath]: advertsApi.reducer,
+    [filterApi.reducerPath]: filterApi.reducer,
   },
-//   middleware: getDefaultMiddleware =>
-//     getDefaultMiddleware({
-//       serializableCheck: {
-//         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-//       },
-//     })
-//       .concat(advertsAPI.middleware)
-//       .concat(makesFilterAPI.middleware),
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    })
+      .concat(advertsApi.middleware)
+      .concat(filterApi.middleware),
 });
 
 export const persistor = persistStore(store);

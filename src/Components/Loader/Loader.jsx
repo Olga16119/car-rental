@@ -1,15 +1,14 @@
-import {BarLoader} from 'react-spinners';
+import { BeatLoader } from 'react-spinners';
 
-const Loader = ({ size = 10, margin = 6, position = {} }) => {
+const Loader = ({ position = {} }) => {
   return (
-    <BarLoader
-  height="80"
-  width="80"
-  color="#4fa94d"
-  ariaLabel="bars-loading"
-  wrapperStyle={{}}
-  wrapperClass=""
-  visible={true}
+    <BeatLoader
+      height="80"
+      width="80"
+      radius="9"
+      color={'var(--accent-colour)'}
+      aria-label="three-dots-loading"
+      cssOverride={position}
     />
   );
 };
