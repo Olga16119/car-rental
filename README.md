@@ -1,4 +1,4 @@
-<!-- # CAR-RENTAL application
+# CAR-RENTAL application
 
 Test task project
 
@@ -30,4 +30,4 @@ The Favorites page is a place filled by the user himself.
 A modal window opens when you click on the Learn more about car button. It
 allows users to see detailed information about the car.
 
-![Edit-modal](./assets/Modal.png) -->
+![Edit-modal](./assets/Modal.png)
