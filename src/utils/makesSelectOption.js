@@ -1,4 +1,5 @@
 const makesSelectOption = data => {
+  
   const optionsArray = [...data]
     .sort((a, b) => a.localeCompare(b))
     .map(el => ({

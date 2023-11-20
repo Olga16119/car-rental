@@ -1,7 +1,14 @@
-.logo{
+.logo {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    display: block;
     width: 125px;
     height: 35px;
     padding: 10px 0;
-    fill: black;
-    stroke: navy;
+    fill: var(--colour-text);
+    stroke: var(--accent-colour-active);
+  }
 }

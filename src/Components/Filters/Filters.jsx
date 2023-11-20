@@ -6,10 +6,7 @@ import SelectChoose from 'Components/Select/Select';
 import { useGetAllQuery } from 'redux/api/advertsApi';
 import { useGetMakesFilterQuery } from 'redux/api/filterApi';
 import { makesSelectOption, priceSelectOption } from '../../utils';
-
 import css from './Filters.module.css';
-// import priceSelectStyles from 'components/SelectInput/priceSelectStyles';
-// import makesSelectsStyles from 'components/SelectInput/makesSelectStyles';
 import Button from 'Components/Button/Button';
 
 const Filters = ({
@@ -18,8 +15,8 @@ const Filters = ({
   const { data: makesData, isLoading } = useGetMakesFilterQuery();
   const { data: allAdverts } = useGetAllQuery();
 
-  const [makesDefSelVal, setMakesDefSelVal] = useState('All makers');
-  const [priceDefSelVal, setPriceDefSelVal] = useState('To $');
+  const [makesSelectValue, setMakesSelectValue] = useState('All makers');
+  const [priceSelectValue, setPriceSelectValue] = useState('To $');
   const [makesSelectOptions, setMakesSelectOptions] = useState([]);
   const [priceSelectOptions, setPriceSelectOptions] = useState([]);
   const [fromInput, setFromInput] = useState('');
@@ -52,11 +49,11 @@ const Filters = ({
     const { name, value } = selectData;
     switch (name) {
       case 'makesCategoty': {
-        setMakesDefSelVal(value);
+        setMakesSelectValue(value);
         return;
       }
       case 'priceFilter': {
-        setPriceDefSelVal(value);
+        setPriceSelectValue(value);
         return;
       }
       default:
@@ -84,8 +81,8 @@ const Filters = ({
     e.preventDefault();
     setCurrentPage(1);
     handleSearch({
-      make: makesDefSelVal,
-      rentalPrice: priceDefSelVal,
+      make: makesSelectValue,
+      rentalPrice: priceSelectValue,
       from: fromInput,
       to: toInput,
     });
@@ -99,9 +96,8 @@ const Filters = ({
           nameInput="makesCategoty"
           options={makesSelectOptions}
           handleChange={handleSelectChange}
-          defaultValue={makesDefSelVal}
+          defaultValue={makesSelectValue}
           isLoading={isLoading}
-          styles={`${css['min']}`}
         />
       </label>
 
@@ -111,10 +107,8 @@ const Filters = ({
           nameInput="priceFilter"
           options={priceSelectOptions}
           handleChange={handleSelectChange}
-          defaultValue={makesDefSelVal}
+          defaultValue={makesSelectValue}
           isLoading={isLoading}
-          styles
-          //   ={priceSelectStyles()}
         />
       </label>
 

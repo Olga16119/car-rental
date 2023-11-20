@@ -1,0 +1,37 @@
+.params-list {
+  display: flex;
+  flex-flow: column;
+  gap: 4px;
+  margin-bottom: 28px;
+
+  color: var(--tags-txt-cl);
+  font-size: 12px;
+}
+
+.cars-tags {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.tags-item:not(:last-child) {
+  display: flex;
+}
+
+.tags-item:not(:last-child)::after {
+  content: '';
+  height: 16px;
+  margin: 0 6px;
+  border: 0.5px solid var(--colour-text-select);
+}
+
+.tag-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.learnMore-btn {
+  margin-top: auto;
+}

@@ -1,0 +1,45 @@
+.content-box {
+  display: flex;
+  flex-flow: column;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+
+.image {
+  width: 70%;
+  height: 150px;
+  background-image: url('../../images/photo-NOT-FOUND.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-size: 100% 80%;
+}
+
+.text {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.11;
+}
+
+@media screen and (min-width: 768px) {
+  .content-box {
+    width: 75%;
+  }
+
+  .image {
+    width: 55%;
+    height: 160px;
+    background-size: 100% 100%;
+  }
+
+  .text {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .content-box {
+    width: 50%;
+  }
+}

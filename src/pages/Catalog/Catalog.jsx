@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
-
 import { useGetAllQuery } from 'redux/api/advertsApi';
 import { filterCars, pagination, scroll } from '../../utils';
+
 import CarsList from 'Components/CarsList/CarsList';
 import Filters from 'Components/Filters/Filters';
 import Button from 'Components/Button/Button';
@@ -39,7 +39,7 @@ const Catalog = () => {
       setTotalPages(Math.ceil(allAdverts.length / limit));
     } else {
       const filteredCars = pagination({
-        arr: filteredCarsArray,
+        array: filteredCarsArray,
         limit,
         currentPage,
       });
@@ -110,11 +110,11 @@ const Catalog = () => {
       )}
 
       {currentPage < totalPages && (
+        
         <Button
-          className={css['load-btn']}
           onButtonClick={handleLoadMore}
           title="Load More"
-          styles={css['load-btn']}
+          styles={css['btn-LoadMore']}
         />
       )}
     </>

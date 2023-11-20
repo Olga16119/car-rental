@@ -1,25 +1,25 @@
 import PropTypes from 'prop-types';
 import CarCard from 'Components/CarCard/CarCard';
-import css from "./CarsList.module.css"
+import css from './FavoritesList.module.css'
 
-const CarsList = ({ cars }) => {
+const FavoritesList = ({ cards }) => {
   return (
-    <>
-      <ul className={css["catalog-list"]}>
-        {cars.map(car => (
-          <li className={css["card-item"]} key={car.id}>
-            <CarCard data={car} />
+    <ul className={css['favorites-list']}>
+      {cards.map(card => {
+        return (
+          <li className={css['card-item']} key={card.id}>
+            <CarCard data={card} />
           </li>
-        ))}
-      </ul>
-    </>
+        );
+      })}
+    </ul>
   );
 };
 
-export default CarsList;
+export default FavoritesList;
 
-CarsList.propTypes = {
-  cars: PropTypes.arrayOf(
+FavoritesList.propTypes = {
+  cards: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       img: PropTypes.string,

@@ -8,7 +8,6 @@ const SelectChoose = ({
   handleChange,
   defaultValue,
   isLoading = false,
-  styles,
 }) => {
   const [value, setValue] = useState(defaultValue);
 
@@ -41,7 +40,6 @@ const SelectChoose = ({
       onChange={onChange}
       options={options}
       isSearchable={false}
-      styles={styles}
       openMenuOnFocus
     />
   );
@@ -55,5 +53,4 @@ SelectChoose.propTypes = {
   handleChange: PropTypes.func.isRequired,
   defaultValue: PropTypes.string.isRequired,
   isLoading: PropTypes.bool,
-  style: PropTypes.object,
 };

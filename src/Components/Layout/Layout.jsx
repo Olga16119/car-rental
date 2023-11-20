@@ -16,6 +16,9 @@ const Layout = () => {
         fallback={
           <Loader
             position={{
+              marginTop: '100px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
               textAlign: 'center',
             }}
           />

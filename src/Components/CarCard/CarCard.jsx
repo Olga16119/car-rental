@@ -9,8 +9,7 @@ import ParamsList from 'Components/ParamsList/ParamsList';
 import notFoundPhoto from '../../images/photo-NOT-FOUND.webp';
 
 import css from './CarCard.module.css';
-// import accent from 'css/utils.module.css';
-// import Modal from 'components/Modal';
+import Modal from 'Components/Modal/Modal';
 import changeAddress from '../../utils/changeAddress';
 
 const btnFavoriteState = {
@@ -70,15 +69,15 @@ const CarCard = ({ data }) => {
 
   return (
     <>
-      <div>
-        <div>
-          <img src={img ? img : notFoundPhoto} alt={make} loading="lazy" />
+      <div className={css['car-card']}>
+        <div className={css['image-thumb']}>
+          <img className={css['image']} src={img ? img : notFoundPhoto} alt={make} loading="lazy" />
         </div>
 
-        <div>
+        <div className={css['description']}>
           <p>
             {`${make} `}
-            <span>{`${model}`}</span>
+            <span className={css['accent']}>{`${model}`}</span>
             {`, ${year}`}
           </p>
 
@@ -96,13 +95,12 @@ const CarCard = ({ data }) => {
           }}
         />
 
-        <Button
+        <Button 
           title="Learn more"
           onButtonClick={toggleModal}
-          styles={css['card-btn']}
         />
 
-        <button onClick={handleClickFavorite} className={css['fav-btn']}>
+        <button onClick={handleClickFavorite} className={css['favorite-btn']}>
           <svg
             className={`${css['icon']} ${css[btnState]}`}
             xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +120,7 @@ const CarCard = ({ data }) => {
           </svg>
         </button>
       </div>
-      {/* {isModalShow && <Modal onClose={toggleModal} data={data} />} */}
+      {isModalShow && <Modal onClose={toggleModal} data={data} />}
     </>
   );
 };

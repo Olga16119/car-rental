@@ -1,15 +1,13 @@
 .navigation {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 10px 0;
+  padding: 10px 20px 0 20px;
 }
 
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 40px;
-  margin-left: auto;
+  gap: 120px;
   font-weight: 600;
   font-size: 25px;
 }
@@ -20,5 +18,22 @@
 
 .nav-link:hover,
 .nav-link:focus {
-  color: var(--accent-colour-active);
+  color: var(--colour-text-secondary);
+}
+
+@media screen and (min-width: 768px) {
+  .navigation {
+    padding: 10px 32px 0 32px;
+  }
+
+  .nav-list {
+    margin-left: auto;
+    gap: 40px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .navigation {
+    padding: 10px 128px 0 128px;
+  }
 }
