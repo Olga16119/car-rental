@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/Olga16119/car-rental/static/css/main.fe3869e8.css",
+    "main.js": "/Olga16119/car-rental/static/js/main.d52b42af.js",
+    "static/css/936.4c816f13.chunk.css": "/Olga16119/car-rental/static/css/936.4c816f13.chunk.css",
+    "static/js/936.8988c790.chunk.js": "/Olga16119/car-rental/static/js/936.8988c790.chunk.js",
+    "static/css/781.6e7d4c35.chunk.css": "/Olga16119/car-rental/static/css/781.6e7d4c35.chunk.css",
+    "static/js/781.e117ab55.chunk.js": "/Olga16119/car-rental/static/js/781.e117ab55.chunk.js",
+    "static/css/19.e5d2e4f8.chunk.css": "/Olga16119/car-rental/static/css/19.e5d2e4f8.chunk.css",
+    "static/js/19.40b31567.chunk.js": "/Olga16119/car-rental/static/js/19.40b31567.chunk.js",
+    "static/js/492.f0c0b055.chunk.js": "/Olga16119/car-rental/static/js/492.f0c0b055.chunk.js",
+    "static/media/montserrat-v26-latin-600.woff2": "/Olga16119/car-rental/static/media/montserrat-v26-latin-600.4201798fe1a74331c392.woff2",
+    "static/media/montserrat-v26-latin-regular.woff2": "/Olga16119/car-rental/static/media/montserrat-v26-latin-regular.9ef09180105730e3cb92.woff2",
+    "static/media/aladin-v24-latin-regular.woff2": "/Olga16119/car-rental/static/media/aladin-v24-latin-regular.ccfa389f670b3e37bec9.woff2",
+    "static/media/manrope-v15-latin-600.woff2": "/Olga16119/car-rental/static/media/manrope-v15-latin-600.ec61c26ae9843c74c66e.woff2",
+    "static/media/manrope-v15-latin-regular.woff2": "/Olga16119/car-rental/static/media/manrope-v15-latin-regular.5b06bf94f857e4244b64.woff2",
+    "static/media/manrope-v15-latin-500.woff2": "/Olga16119/car-rental/static/media/manrope-v15-latin-500.b6bf3db6256270076d37.woff2",
+    "static/media/photo-NOT-FOUND.webp": "/Olga16119/car-rental/static/media/photo-NOT-FOUND.119a00c504ef5398bb85.webp",
+    "index.html": "/Olga16119/car-rental/index.html",
+    "main.fe3869e8.css.map": "/Olga16119/car-rental/static/css/main.fe3869e8.css.map",
+    "main.d52b42af.js.map": "/Olga16119/car-rental/static/js/main.d52b42af.js.map",
+    "936.4c816f13.chunk.css.map": "/Olga16119/car-rental/static/css/936.4c816f13.chunk.css.map",
+    "936.8988c790.chunk.js.map": "/Olga16119/car-rental/static/js/936.8988c790.chunk.js.map",
+    "781.6e7d4c35.chunk.css.map": "/Olga16119/car-rental/static/css/781.6e7d4c35.chunk.css.map",
+    "781.e117ab55.chunk.js.map": "/Olga16119/car-rental/static/js/781.e117ab55.chunk.js.map",
+    "19.e5d2e4f8.chunk.css.map": "/Olga16119/car-rental/static/css/19.e5d2e4f8.chunk.css.map",
+    "19.40b31567.chunk.js.map": "/Olga16119/car-rental/static/js/19.40b31567.chunk.js.map",
+    "492.f0c0b055.chunk.js.map": "/Olga16119/car-rental/static/js/492.f0c0b055.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe3869e8.css",
+    "static/js/main.d52b42af.js"
+  ]
+}
