@@ -7,17 +7,18 @@
 }
 
 .image {
-  width: 70%;
-  height: 150px;
+  width: 260px;
+  height: 200px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  border-radius: 14px;
   background-image: url('../../images/photo-NOT-FOUND.webp');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  background-size: 100% 80%;
 }
 
 .text {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.11;
 }
@@ -28,18 +29,12 @@
   }
 
   .image {
-    width: 55%;
-    height: 160px;
+    width: 400px;
+    height: 300px;
     background-size: 100% 100%;
   }
 
   .text {
-    font-size: 18px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .content-box {
-    width: 50%;
+    font-size: 20px;
   }
 }
